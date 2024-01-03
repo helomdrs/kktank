@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.82.7 commit date:2020-03-12, commit time:05:06, hash:375c7dc4caf4</authoring_tool>
+    </contributor>
+    <created>2020-04-12T22:00:15</created>
+    <modified>2020-04-12T22:00:15</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Stone-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.1460112 0.1833831 0.2265842 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="Stone-material" name="Stone">
+      <instance_effect url="#Stone-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Icosphere_013-mesh" name="Icosphere.013">
+      <mesh>
+        <source id="Icosphere_013-mesh-positions">
+          <float_array id="Icosphere_013-mesh-positions-array" count="33">0.43945 -0.3443472 0 -0.1969338 -0.4550277 0 -0.6140221 0.04336798 0 -0.1317616 0.4704397 0 0.5032678 0.2855673 0 0.1633549 -0.3360434 0.2854626 -0.2688312 -0.2367706 0.400613 -0.2988224 0.2087734 0.338941 0.09712684 0.3692167 0.286886 0.3731057 -0.01976221 0.3473999 -0.02637958 0.08534133 0.58416</float_array>
+          <technique_common>
+            <accessor source="#Icosphere_013-mesh-positions-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Icosphere_013-mesh-normals">
+          <float_array id="Icosphere_013-mesh-normals-array" count="54">0.9570146 -0.09695678 0.2733541 0.1682004 -0.9671086 0.1908135 -0.7502132 -0.6278246 0.2074043 -0.6429965 0.7260882 0.2436214 0.2776657 0.953771 0.1149901 0.6063873 -0.5199573 0.6016138 -0.07824617 -0.8812745 0.4660824 -0.7419222 0.04267865 0.6691263 -0.2669569 0.8220117 0.5030217 0.565397 0.5028596 0.6538032 0.3808389 -0.4144303 0.8265649 0.09614813 -0.5464408 0.8319603 -0.6524459 0.06064438 0.755405 -0.2217452 0.7495789 0.6236671 0.5364813 0.4877687 0.6886723 0 0 -1 0 0 -1 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Icosphere_013-mesh-normals-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Icosphere_013-mesh-map-0">
+          <float_array id="Icosphere_013-mesh-map-0-array" count="108">0.727272 0.157461 0.545454 0.157461 0.636363 0.314921 0.90909 0.157461 0.727272 0.157461 0.818181 0.314921 0.181818 0.157461 0 0.157461 0.090909 0.314921 0.363636 0.157461 0.181818 0.157461 0.272727 0.314921 0.545454 0.157461 0.363636 0.157461 0.454545 0.314921 0.727272 0.157461 0.636363 0.314921 0.818181 0.314921 0.90909 0.157461 0.818181 0.314921 1 0.314921 0.181818 0.157461 0.090909 0.314921 0.272727 0.314921 0.363636 0.157461 0.272727 0.314921 0.454545 0.314921 0.545454 0.157461 0.454545 0.314921 0.636363 0.314921 0.818181 0.314921 0.636363 0.314921 0.727272 0.472382 1 0.314921 0.818181 0.314921 0.90909 0.472382 0.272727 0.314921 0.090909 0.314921 0.181818 0.472382 0.454545 0.314921 0.272727 0.314921 0.363636 0.472382 0.636363 0.314921 0.454545 0.314921 0.545454 0.472382 0 0.157461 0.181818 0.157461 0.363636 0.157461 0.545454 0.157461 0.727272 0.157461 0.363636 0.157461 0.727272 0.157461 0 0.157461 0.363636 0.157461</float_array>
+          <technique_common>
+            <accessor source="#Icosphere_013-mesh-map-0-array" count="54" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Icosphere_013-mesh-vertices">
+          <input semantic="POSITION" source="#Icosphere_013-mesh-positions"/>
+        </vertices>
+        <triangles material="Stone-material" count="18">
+          <input semantic="VERTEX" source="#Icosphere_013-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Icosphere_013-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Icosphere_013-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 4 0 1 9 0 2 1 1 3 0 1 4 5 1 5 2 2 6 1 2 7 6 2 8 3 3 9 2 3 10 7 3 11 4 4 12 3 4 13 8 4 14 0 5 15 9 5 16 5 5 17 1 6 18 5 6 19 6 6 20 2 7 21 6 7 22 7 7 23 3 8 24 7 8 25 8 8 26 4 9 27 8 9 28 9 9 29 5 10 30 9 10 31 10 10 32 6 11 33 5 11 34 10 11 35 7 12 36 6 12 37 10 12 38 8 13 39 7 13 40 10 13 41 9 14 42 8 14 43 10 14 44 1 15 45 2 15 46 3 15 47 4 16 48 0 16 49 3 16 50 0 17 51 1 17 52 3 17 53</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="rock1" name="rock1" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Icosphere_013-mesh" name="rock1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Stone-material" target="#Stone-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
