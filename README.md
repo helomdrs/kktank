@@ -9,7 +9,6 @@ Index
 - [How to Get](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#how-to-get)
 - [For Kokkuers](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#for-kokkuers)
 - [Assets Used](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#assets-used)
-- [Tools Used](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#tools-used)
 
 Features
 -
@@ -33,10 +32,5 @@ Assets Used
 -
 - [Tank Game Pack](https://gisha.itch.io/tank-game-pack)
 - [Kenney Fonts](https://www.kenney.nl/assets/kenney-fonts)
-- [Kenney Crosshair Pack](https://www.kenney.nl/assets/crosshair-pack)
 - [Kenney Particle Pack](https://www.kenney.nl/assets/particle-pack)
 - [Kenney UI Pack (Space Expansion)](https://www.kenney.nl/assets/ui-pack-space-expansion)
-
-Tools Used
--
-- [XML Texture Atlas Slicer](https://assetstore.unity.com/packages/tools/utilities/xml-texture-atlas-slicer-36103)
