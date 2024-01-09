@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5083225090315689909}
   - component: {fileID: 3656167070689811313}
   - component: {fileID: 4653449525197669152}
+  - component: {fileID: 1312128226322624092}
+  - component: {fileID: 6326387471366980165}
   m_Layer: 7
   m_Name: PlayerTank
   m_TagString: Player
@@ -142,6 +144,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5aa1802b44220445ac51ee230125841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1312128226322624092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086864615811559880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b80815ddf72ee8a44aa7e3b4a0b47600, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &6326387471366980165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086864615811559880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff289e6ac5086f94d8a26d7128123da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3961382682689035875

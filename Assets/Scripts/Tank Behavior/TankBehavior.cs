@@ -24,8 +24,12 @@ public class TankBehavior : MonoBehaviour
 
     public void MoveTank(float moveInput)
     {
-        movementController.MoveTank(moveInput);
-        movementController.RotateTank(moveInput);
+        movementController.UpdateTankMovement(moveInput);
+    }
+
+    public void RotateTank(float moveInput) 
+    {
+        movementController.UpdateTankRotateion(moveInput);
     }
 
     public void TankShoot()
