@@ -12,9 +12,6 @@ public class Combat : MonoBehaviour
 
     bool isTurretActive = false;
     float lastShotTime = 0;
-
-    //For Testing
-    private void Start() { ActivateTurret(); }
     
     public void ActivateTurret()
     {
@@ -46,13 +43,17 @@ public class Combat : MonoBehaviour
         }
     }
 
+    //This method should be "protected" to be accessed only by TankBehavior
     public void Shoot()
     {
         if(isTurretActive && (Time.time - lastShotTime >= shotDelay)) 
         {
-            Debug.Log("Shooting");
+            //Send an event here of shooting for VFX/SFX
+
             Vector3 spawnPosition = muzzle.position;
             Quaternion spawnRotation = turret.rotation;
+
+            //Vector3.down used because of X -90 rotation of model
             Vector3 xDirection = turret.TransformDirection(Vector3.down);
 
             GameObject newBullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);

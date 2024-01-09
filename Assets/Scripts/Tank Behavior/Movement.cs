@@ -12,12 +12,16 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    //This method should be "protected" to be accessed only by TankBehavior
     public void MoveTank(float input)
     {
-        Vector3 moveDirection = transform.forward * input * moveSpeed * Time.fixedDeltaTime;
+        //Send an event here of moving for VFX/SFX????
+
+        Vector3 moveDirection = input * moveSpeed * Time.fixedDeltaTime * transform.forward;
         rb.MovePosition(rb.position + moveDirection);
     }
 
+    //This method should be "protected" to be accessed only by TankBehavior
     public void RotateTank(float input)
     {
         float rotation = input * rotationSpeed * Time.fixedDeltaTime;

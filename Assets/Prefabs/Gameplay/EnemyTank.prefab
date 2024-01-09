@@ -262,6 +262,10 @@ GameObject:
   - component: {fileID: 8949510763431003152}
   - component: {fileID: 1713450469073375627}
   - component: {fileID: 8208901361338392034}
+  - component: {fileID: 6059569779609925491}
+  - component: {fileID: 2742705572947293111}
+  - component: {fileID: 876414951339832536}
+  - component: {fileID: 2027946727907025589}
   m_Layer: 7
   m_Name: EnemyTank
   m_TagString: Enemy
@@ -336,6 +340,62 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &6059569779609925491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960600582262818884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ad9a0f3f599df479b58741c405266d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 20
+  rotationSpeed: 30
+--- !u!114 &2742705572947293111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960600582262818884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df035e7af4fcef54bb34762478aa4d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5988722955286764239, guid: 69c4000437a1e2648b51f2eb4d6e7122, type: 3}
+  muzzle: {fileID: 1538092005113096930}
+  turret: {fileID: 1099028964359852685}
+  shotDelay: 1
+--- !u!114 &876414951339832536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960600582262818884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55407f22b8f3e2b42959b04d25df5d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 100
+  bulletDamage: 10
+--- !u!114 &2027946727907025589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960600582262818884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5aa1802b44220445ac51ee230125841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5655627749264962908
 GameObject:
   m_ObjectHideFlags: 0

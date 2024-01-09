@@ -1,6 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+//My intention here is to make TankBehavior the only class available for PlayerController and AIController to access. 
+//I wish to keep all public methods of Combat and Movement to similar to 'protected', to be accessed only for TankBehavior.
 
 [RequireComponent(typeof(Movement))]
 [RequireComponent(typeof(Combat))]
@@ -17,21 +18,18 @@ public class TankBehavior : MonoBehaviour
         combatController = GetComponent<Combat>();
         healthController = GetComponent<Health>();
 
+        //Put this in a initialize event later
         combatController.ActivateTurret();
     }
 
-    // For testing
-    void Update() 
+    public void MoveTank(float moveInput)
     {
-        float moveInput = Input.GetAxis("Vertical");
-        float rotationInput = Input.GetAxis("Horizontal");
-
         movementController.MoveTank(moveInput);
-        movementController.RotateTank(rotationInput);
+        movementController.RotateTank(moveInput);
+    }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            combatController.Shoot();
-        }
+    public void TankShoot()
+    {
+        combatController.Shoot();
     }
 }

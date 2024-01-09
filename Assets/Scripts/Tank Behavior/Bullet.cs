@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Destroy bullet");
+        //Send an event here of explosion for VFX/SFX
     }
 
     private void OnCollisionEnter(Collision collision)

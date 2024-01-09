@@ -32232,18 +32232,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTank
       objectReference: {fileID: 0}
-    - target: {fileID: 5840790417439621450, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239837688585717179, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
-      propertyPath: m_ProvidesContacts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046114006097381277, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
-      propertyPath: moveSpeed
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -9,11 +9,14 @@ public class Health : MonoBehaviour
 
     private void TakeDamage()
     {
-        Debug.Log("Took damage");
+        //Send an event here of damage for VFX/SFX
+
         totalHealth -= bulletDamage;
+        //Send and event here of update health for HUD
+
         if(totalHealth <= 0)
         {
-            Debug.Log("Is dead");
+            //Send an event here of death for VFX/SFX
         }
     }
 
