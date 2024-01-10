@@ -17,19 +17,25 @@ public class TankBehavior : MonoBehaviour
         movementController = GetComponent<Movement>();
         combatController = GetComponent<Combat>();
         healthController = GetComponent<Health>();
-
-        //Put this in a initialize event later
-        combatController.ActivateTurret();
     }
 
     public void MoveTank(float moveInput)
     {
-        movementController.MoveTank(moveInput);
-        movementController.RotateTank(moveInput);
+        movementController.UpdateTankMovement(moveInput);
+    }
+
+    public void RotateTank(float moveInput) 
+    {
+        movementController.UpdateTankRotateion(moveInput);
     }
 
     public void TankShoot()
     {
         combatController.Shoot();
+    }
+
+    public void RotateTurret(Vector3 targetPosition) 
+    {
+        combatController.RotateTurret(targetPosition);
     }
 }

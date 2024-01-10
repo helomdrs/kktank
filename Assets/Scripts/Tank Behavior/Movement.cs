@@ -2,18 +2,38 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 20.0f;
-    [SerializeField] private float rotationSpeed = 30.0f;
+    [SerializeField] private float moveSpeed = 10.0f;
+    [SerializeField] private float rotationSpeed = 15.0f;
 
     private Rigidbody rb;
 
-    void Start()
+    private float moveInput = 0.0f;
+    private float rotateInput = 0.0f;
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
+    private void Update() 
+    {
+        MoveTank(moveInput);
+        RotateTank(rotateInput);
+    }
+
     //This method should be "protected" to be accessed only by TankBehavior
-    public void MoveTank(float input)
+    public void UpdateTankMovement(float input) 
+    {
+        moveInput = input;
+    }
+
+    //This method should be "protected" to be accessed only by TankBehavior
+    public void UpdateTankRotateion(float input) 
+    {
+        rotateInput = input;
+    }
+
+    private void MoveTank(float input)
     {
         //Send an event here of moving for VFX/SFX????
 
@@ -21,8 +41,7 @@ public class Movement : MonoBehaviour
         rb.MovePosition(rb.position + moveDirection);
     }
 
-    //This method should be "protected" to be accessed only by TankBehavior
-    public void RotateTank(float input)
+    private void RotateTank(float input)
     {
         float rotation = input * rotationSpeed * Time.fixedDeltaTime;
         Quaternion turnRotation = Quaternion.Euler(0.0f, rotation, 0.0f);
