@@ -25,4 +25,15 @@ public class PlayerController : MonoBehaviour
     {
         tankBehavior.TankShoot();
     }
+    
+    public void OnMouse() 
+    {
+        Vector3 mousePosition = Mouse.current.position.ReadValue();
+        Ray mouseRay = Camera.main.ScreenPointToRay(mousePosition);
+
+        if(Physics.Raycast(mouseRay, out RaycastHit hit))
+        {
+            tankBehavior.RotateTurret(hit.point);
+        }
+    }
 }
