@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 2027946727907025589}
   - component: {fileID: 6819113859207285217}
   - component: {fileID: 87081282578672735}
+  - component: {fileID: 5206600599433068956}
   m_Layer: 7
   m_Name: EnemyTank
   m_TagString: Enemy
@@ -385,7 +386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 100
-  bulletDamage: 10
 --- !u!114 &2027946727907025589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +434,28 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!64 &5206600599433068956
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960600582262818884}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5655627749264962908
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +648,7 @@ Transform:
   m_GameObject: {fileID: 7784923242988507245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.00000014994293, y: -0.971, z: -0}
+  m_LocalPosition: {x: -0.00000014994293, y: -1.93, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

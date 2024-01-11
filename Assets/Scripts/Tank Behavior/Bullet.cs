@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float bulletVelocity = 50.0f;
     [SerializeField] private float bulletLifetime = 2.0f;
+    [SerializeField] private int bulletDamage = 10;
 
     Rigidbody rb;
 
@@ -16,12 +17,14 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, bulletLifetime);
     }
 
+    public int GetBulletDamage() { return bulletDamage; }
+
     private void OnDestroy()
     {
         //Send an event here of explosion for VFX/SFX
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider _)
     {
         Destroy(gameObject);
     }

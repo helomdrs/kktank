@@ -3,30 +3,43 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int totalHealth = 100;
-    [SerializeField] private int bulletDamage = 10;
 
     private const string BULLET_TAG = "Bullet";
 
-    private void TakeDamage()
+    private bool isAlive = true;
+
+    private void TakeDamage(int bulletDamage)
     {
-        //Send an event here of damage for VFX/SFX
-
-        totalHealth -= bulletDamage;
-        //Send and event here of update health for HUD
-
-        if(totalHealth <= 0)
+        if(isAlive)
         {
-            //Send an event here of death for VFX/SFX
+            //Send an event here of damage for VFX/SFX
+            totalHealth -= bulletDamage;
+
+            //Send and event here of update health for HUD
+
+            if(totalHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Die() 
     {
-        //Debug.Log(collision.gameObject.name);
-        
-        if(collision.gameObject.CompareTag(BULLET_TAG))
+        //Send an event here of death for VFX/SFX
+
+        Debug.Log(gameObject.name + " IS DEAD!");
+        isAlive = false;
+
+        //Send here an event of who is dead;
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {       
+        if(collider.gameObject.CompareTag(BULLET_TAG) && isAlive)
         {
-            TakeDamage();
+            int bulletDamage = collider.gameObject.GetComponent<Bullet>().GetBulletDamage();
+            TakeDamage(bulletDamage);
         }
     }
 }
