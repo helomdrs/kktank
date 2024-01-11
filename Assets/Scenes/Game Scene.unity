@@ -32243,12 +32243,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1312128226322624092, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3086864615811559880, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
       propertyPath: m_Name
       value: PlayerTank
       objectReference: {fileID: 0}
     - target: {fileID: 3086864615811559880, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653449525197669152, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326387471366980165, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046114006097381277, guid: 1a1a9bc06970f9d4cbb2892b435330ef, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -32310,18 +32326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTank
       objectReference: {fileID: 0}
-    - target: {fileID: 4960600582262818884, guid: 92b3778bafef0d247ada0932020bc884, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6819113859207285217, guid: 92b3778bafef0d247ada0932020bc884, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 543450651938461297}
-    - target: {fileID: 8208901361338392034, guid: 92b3778bafef0d247ada0932020bc884, type: 3}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
     - target: {fileID: 8949510763431003152, guid: 92b3778bafef0d247ada0932020bc884, type: 3}
       propertyPath: m_LocalPosition.x
       value: 499.3

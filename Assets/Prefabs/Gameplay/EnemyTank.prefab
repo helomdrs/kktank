@@ -283,7 +283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4960600582262818884}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 499.3, y: 3.7, z: -237}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5988722955286764239, guid: 69c4000437a1e2648b51f2eb4d6e7122, type: 3}
   muzzle: {fileID: 1538092005113096930}
   turret: {fileID: 1099028964359852685}
-  shotDelay: 1
+  shotDelay: 2
 --- !u!114 &876414951339832536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  behaviorUpdateRate: 0.2
 --- !u!195 &87081282578672735
 NavMeshAgent:
   m_ObjectHideFlags: 0

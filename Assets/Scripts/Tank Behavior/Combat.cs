@@ -12,19 +12,22 @@ public class Combat : MonoBehaviour
 
     public void RotateTurret(Vector3 targetPosition)
     {  
-        turret.LookAt(targetPosition);
+        if(targetPosition != null) 
+        {
+             turret.LookAt(targetPosition);
 
-        //-90 to fix the orientation of the model, clamp x and z rotation
-        turret.rotation = Quaternion.Euler(new Vector3(-90, turret.rotation.eulerAngles.y, 0));
+            //-90 to fix the orientation of the model, clamp x and z rotation
+            turret.rotation = Quaternion.Euler(new Vector3(-90, turret.rotation.eulerAngles.y, 0));
+        }
     }
 
     //This method should be "protected" to be accessed only by TankBehavior
     public void Shoot()
     {
-        if(Time.time - lastShotTime >= shotDelay) 
+        if((Time.time - lastShotTime) >= shotDelay) 
         {
             //Send an event here of shooting for VFX/SFX
-
+            
             Vector3 spawnPosition = muzzle.position;
             Quaternion spawnRotation = turret.rotation;
 
