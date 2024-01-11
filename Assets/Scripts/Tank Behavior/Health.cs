@@ -22,6 +22,8 @@ public class Health : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Debug.Log(collision.gameObject.name);
+        
         if(collision.gameObject.CompareTag(BULLET_TAG))
         {
             TakeDamage();
