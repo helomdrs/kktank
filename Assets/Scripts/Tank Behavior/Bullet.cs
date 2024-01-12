@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
     private void OnDestroy()
     {
         //Send an event here of explosion for VFX/SFX
+        EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.HitEffect, gameObject.transform.position);
     }
 
     private void OnTriggerEnter(Collider _)

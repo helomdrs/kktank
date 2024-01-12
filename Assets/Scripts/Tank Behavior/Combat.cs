@@ -27,6 +27,7 @@ public class Combat : MonoBehaviour
         if((Time.time - lastShotTime) >= shotDelay) 
         {
             //Send an event here of shooting for VFX/SFX
+            EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.ShootEffect, muzzle.position);
             
             Vector3 spawnPosition = muzzle.position;
             Quaternion spawnRotation = turret.rotation;
