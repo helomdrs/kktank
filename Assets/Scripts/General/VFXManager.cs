@@ -20,16 +20,16 @@ public class VFXManager : MonoBehaviour
 
     private void OnDeathEffect(Vector3 effectPosition) 
     {
-        Debug.Log("Play death effect on position " + effectPosition);
+        //Debug.Log("Play death effect on position " + effectPosition);
     }
 
     private void OnShootEffect(Vector3 effectPosition) 
     {
-        Debug.Log("Play shoot effect on position " + effectPosition);
+        //Debug.Log("Play shoot effect on position " + effectPosition);
     }
 
     private void OnHitEffect(Vector3 effectPosition) 
     {
-        Debug.Log("Play hit effect on position " + effectPosition);
+        //Debug.Log("Play hit effect on position " + effectPosition);
     }
 }

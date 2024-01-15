@@ -14,7 +14,6 @@ public class Health : MonoBehaviour
         {
             totalHealth -= bulletDamage;
 
-            //Send and event here of update health for HUD
             EventBusManager.FireEvent<int>(EventBusEnum.EventName.UIHealthUpdate, totalHealth);
 
             if(totalHealth <= 0)
@@ -26,22 +25,27 @@ public class Health : MonoBehaviour
 
     private void Die() 
     {
-        //Send an event here of death for VFX/SFX
         EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.DeathEffect, gameObject.transform.position);
 
         Debug.Log(gameObject.name + " IS DEAD!");
         isAlive = false;
 
-        //Send here an event of who is dead;
-        EventBusManager.FireEvent<string>(EventBusEnum.EventName.TankDead, gameObject.name);
+        Destroy(gameObject, 1f);
+
+        EventBusManager.FireEvent<string>(EventBusEnum.EventName.TankDead, gameObject.tag);
     }
 
     private void OnTriggerEnter(Collider collider)
     {       
         if(collider.gameObject.CompareTag(BULLET_TAG) && isAlive)
         {
-            int bulletDamage = collider.gameObject.GetComponent<Bullet>().GetBulletDamage();
-            TakeDamage(bulletDamage);
+            Bullet bullet = collider.gameObject.GetComponent<Bullet>();
+            if(bullet.GetWhoShoot() != gameObject.tag) 
+            {
+                int bulletDamage = bullet.GetBulletDamage();
+                TakeDamage(bulletDamage);
+            }
+            
         }
     }
 }

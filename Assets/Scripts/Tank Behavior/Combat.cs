@@ -26,7 +26,6 @@ public class Combat : MonoBehaviour
     {
         if((Time.time - lastShotTime) >= shotDelay) 
         {
-            //Send an event here of shooting for VFX/SFX
             EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.ShootEffect, muzzle.position);
             
             Vector3 spawnPosition = muzzle.position;
@@ -36,7 +35,7 @@ public class Combat : MonoBehaviour
             Vector3 xDirection = turret.TransformDirection(Vector3.down);
 
             GameObject newBullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);
-            newBullet.GetComponent<Bullet>().LaunchBullet(xDirection);
+            newBullet.GetComponent<Bullet>().LaunchBullet(xDirection, gameObject.tag);
 
             lastShotTime = Time.time;
         }

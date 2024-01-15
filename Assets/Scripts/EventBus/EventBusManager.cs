@@ -85,4 +85,45 @@ public class EventBusManager : MonoBehaviour
         string key = type.ToString() + eventName.ToString();
         return key;
     }
+
+    public static void Subscribe(EventBusEnum.EventName eventName, UnityAction listener)
+    {
+        UnityEvent thisEvent = null;
+
+        if(Instance.eventsHashtable.ContainsKey(eventName)) 
+        {
+            thisEvent = (UnityEvent)Instance.eventsHashtable[eventName];
+            thisEvent.AddListener(listener);
+            Instance.eventsHashtable[eventName] = thisEvent;
+        }
+        else 
+        {
+            thisEvent = new UnityEvent();
+            thisEvent.AddListener(listener);
+            Instance.eventsHashtable.Add(eventName, thisEvent);
+        }
+    }
+
+    public static void Unsubscribe(EventBusEnum.EventName eventName, UnityAction listener) 
+    {
+        if(eventBusManager == null) return;
+
+        UnityEvent thisEvent = null;
+
+        if(Instance.eventsHashtable.Contains(eventName)) {
+            thisEvent = (UnityEvent)Instance.eventsHashtable[eventName];
+            thisEvent.RemoveListener(listener);
+            Instance.eventsHashtable[eventName] = thisEvent;
+        }
+    }
+
+    public static void FireEvent(EventBusEnum.EventName eventName) 
+    {
+        UnityEvent thisEvent = null;
+        
+        if(Instance.eventsHashtable.ContainsKey(eventName)){
+            thisEvent = (UnityEvent)Instance.eventsHashtable[eventName];
+            thisEvent.Invoke();
+        }
+    }
 }

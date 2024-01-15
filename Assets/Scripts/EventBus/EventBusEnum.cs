@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EventBusEnum : MonoBehaviour
@@ -17,6 +15,7 @@ public class EventBusEnum : MonoBehaviour
         ShootEffect,
         DeathEffect,
 
-        TankDead
+        TankDead,
+        SpawnEnemy,
     }
 }
