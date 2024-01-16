@@ -14,8 +14,10 @@ public class Health : MonoBehaviour
         {
             totalHealth -= bulletDamage;
 
-            EventBusManager.FireEvent<int>(EventBusEnum.EventName.UIHealthUpdate, totalHealth);
-
+            if(gameObject.CompareTag("Player")) {
+                EventBusManager.FireEvent<int>(EventBusEnum.EventName.UIHealthUpdate, totalHealth);
+            }
+            
             if(totalHealth <= 0)
             {
                 Die();
