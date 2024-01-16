@@ -10,32 +10,43 @@ public class TankBehavior : MonoBehaviour
 {
     private Movement movementController;
     private Combat combatController;
-    private Health healthController;
+    
+    private bool isInitialized = false;
 
     public void InitBehavior() 
     {
         movementController = GetComponent<Movement>();
         combatController = GetComponent<Combat>();
-        healthController = GetComponent<Health>();
+        
+        isInitialized = true;
+    }
+
+    public void DisableBehavior() 
+    {
+        isInitialized = false;
     }
 
     public void MoveTank(float moveInput)
     {
+        if(!isInitialized) return;
         movementController.UpdateTankMovement(moveInput);
     }
 
     public void RotateTank(float moveInput) 
     {
+        if(!isInitialized) return;
         movementController.UpdateTankRotateion(moveInput);
     }
 
     public void TankShoot()
     {
+        if(!isInitialized) return;
         combatController.Shoot();
     }
 
     public void RotateTurret(Vector3 targetPosition) 
     {
+        if(!isInitialized) return;
         combatController.RotateTurret(targetPosition);
     }
 }
