@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int matchDurationInSeconds = 30;
+    [SerializeField] private float secondsBeforeMatch = 3.5f;
     private const string ENEMY_TANK_TAG = "Enemy";
 
     private Coroutine matchDurationCo;
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start() 
     {
-        Invoke(nameof(StartMatch), 2f);
+        Invoke(nameof(StartMatch), secondsBeforeMatch);
     }  
 
     private void StartMatch()
