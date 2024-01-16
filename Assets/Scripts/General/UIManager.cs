@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
 using TMPro;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +8,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI endScoreText;
+    [SerializeField] private TextMeshProUGUI resultMessage;
 
     [SerializeField] private Image healthBar;
     [SerializeField] private Image healthBarBG;
+    [SerializeField] private GameObject endMatchPanel;
+
+    [SerializeField] private string winMessage = "You win";
+    [SerializeField] private string loseMessage = "You loose";
 
     private Coroutine countdownCoroutine;
     private Coroutine timerCoroutine;
+
+    private int currentScore;
 
     private void OnEnable() 
     {
@@ -50,11 +55,13 @@ public class UIManager : MonoBehaviour
     private void OnMatchEnded() 
     {
         ManageMainHUD(false);
+        StopCoroutine(timerCoroutine);
     }
 
     private void OnScoreUpdated(int newScore) 
     {
         scoreText.text = newScore.ToString("D2");
+        currentScore = newScore;
     }
 
     private void OnHealthUpdated(int newHealth) 
@@ -85,7 +92,18 @@ public class UIManager : MonoBehaviour
 
     private void OnEndScreenUpdated(bool playerWon) 
     {
+        endScoreText.text = currentScore.ToString("D2");
 
+        if(playerWon) 
+        {
+            resultMessage.text = winMessage;
+        } 
+        else 
+        {
+            resultMessage.text = loseMessage;
+        }
+            
+        endMatchPanel.SetActive(true);
     }
 
     private void OnMatchTimerUpdated(int matchDurationInSeconds) 
