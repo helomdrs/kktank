@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Starting match with " + matchDurationInSeconds + " of duration");
         EventBusManager.FireEvent(EventBusEnum.EventName.StartMatch);
         matchDurationCo = StartCoroutine(CountMatchDuration());
+        EventBusManager.FireEvent(EventBusEnum.EventName.UIMatchTimerUpdate, matchDurationInSeconds);
     }
 
     private IEnumerator CountMatchDuration() 

@@ -11,6 +11,7 @@ public class EventBusEnum : MonoBehaviour
         UIHealthUpdate,
         UIEndScreenUpdate,
         UICountdownUpdate,
+        UIMatchTimerUpdate,
 
         HitEffect,
         DamageEffect,
