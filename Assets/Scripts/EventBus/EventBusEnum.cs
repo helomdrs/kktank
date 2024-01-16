@@ -9,6 +9,7 @@ public class EventBusEnum : MonoBehaviour
 
         UIScoreUpdate,
         UIHealthUpdate,
+        UIEndScreenUpdate,
 
         HitEffect,
         DamageEffect,
