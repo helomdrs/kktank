@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         tankBehavior = GetComponent<TankBehavior>();
+        tankBehavior.InitBehavior();
     }
 
     public void OnMove(InputValue value) 

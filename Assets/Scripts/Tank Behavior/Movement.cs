@@ -35,8 +35,6 @@ public class Movement : MonoBehaviour
 
     private void MoveTank(float input)
     {
-        //Send an event here of moving for VFX/SFX????
-
         Vector3 moveDirection = input * moveSpeed * Time.fixedDeltaTime * transform.forward;
         rb.MovePosition(rb.position + moveDirection);
     }

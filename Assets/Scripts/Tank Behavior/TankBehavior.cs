@@ -12,7 +12,7 @@ public class TankBehavior : MonoBehaviour
     private Combat combatController;
     private Health healthController;
 
-    void Start()
+    public void InitBehavior() 
     {
         movementController = GetComponent<Movement>();
         combatController = GetComponent<Combat>();
