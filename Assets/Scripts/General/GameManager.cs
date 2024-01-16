@@ -27,9 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start() 
     {
         Invoke(nameof(StartMatch), secondsBeforeMatch);
-
-        int secondsToCountdown = Mathf.FloorToInt(secondsBeforeMatch);
-        EventBusManager.FireEvent<int>(EventBusEnum.EventName.UICountdownUpdate, secondsToCountdown);
+        EventBusManager.FireEvent<int>(EventBusEnum.EventName.UICountdownUpdate, Mathf.FloorToInt(secondsBeforeMatch));
     }  
 
     private void StartMatch()

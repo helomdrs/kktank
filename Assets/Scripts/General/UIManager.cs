@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
 
     [SerializeField] private Image healthBar;
+    [SerializeField] private Image healthBarBG;
 
     private Coroutine countdownCoroutine;
 
@@ -22,7 +23,7 @@ public class UIManager : MonoBehaviour
         EventBusManager.Subscribe<int>(EventBusEnum.EventName.UICountdownUpdate, OnCountdownUpdated);
         EventBusManager.Subscribe<int>(EventBusEnum.EventName.UIScoreUpdate, OnScoreUpdated);
         EventBusManager.Subscribe<int>(EventBusEnum.EventName.UIHealthUpdate, OnHealthUpdated);
-        EventBusManager.Subscribe<bool>(EventBusEnum.EventName.UIHealthUpdate, OnEndScreenUpdated);
+        EventBusManager.Subscribe<bool>(EventBusEnum.EventName.UIEndScreenUpdate, OnEndScreenUpdated);
     }
 
     private void OnDisable() 
@@ -33,7 +34,7 @@ public class UIManager : MonoBehaviour
         EventBusManager.Unsubscribe<int>(EventBusEnum.EventName.UICountdownUpdate, OnCountdownUpdated);
         EventBusManager.Unsubscribe<int>(EventBusEnum.EventName.UIScoreUpdate, OnScoreUpdated);
         EventBusManager.Unsubscribe<int>(EventBusEnum.EventName.UIHealthUpdate, OnHealthUpdated);
-        EventBusManager.Unsubscribe<bool>(EventBusEnum.EventName.UIHealthUpdate, OnEndScreenUpdated);
+        EventBusManager.Unsubscribe<bool>(EventBusEnum.EventName.UIEndScreenUpdate, OnEndScreenUpdated);
     }
 
     private void OnMatchStarted() 
@@ -48,12 +49,13 @@ public class UIManager : MonoBehaviour
 
     private void OnScoreUpdated(int newScore) 
     {
-
+        scoreText.text = newScore.ToString("D2");
     }
 
     private void OnHealthUpdated(int newHealth) 
     {
-
+        float healthValue = newHealth / 100f;
+        healthBar.fillAmount = healthValue;
     }
 
     private void OnCountdownUpdated(int secondsToCountdown) 
@@ -84,8 +86,9 @@ public class UIManager : MonoBehaviour
     private void ManageMainHUD(bool toEnable) 
     {
         timerText.gameObject.SetActive(toEnable);
-        healthBar.gameObject.SetActive(toEnable);
         scoreText.gameObject.SetActive(toEnable);
+        healthBar.gameObject.SetActive(toEnable);
+        healthBarBG.gameObject.SetActive(toEnable);
     }
 
 }
