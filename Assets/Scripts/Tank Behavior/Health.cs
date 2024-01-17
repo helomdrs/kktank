@@ -3,6 +3,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int totalHealth = 100;
+    [SerializeField] AudioClip damageSfx;
+    [SerializeField] AudioClip explosionSfx;
 
     private const string BULLET_TAG = "Bullet";
 
@@ -13,6 +15,7 @@ public class Health : MonoBehaviour
         if(isAlive)
         {
             totalHealth -= bulletDamage;
+            PlaySFX(true);
 
             if(gameObject.CompareTag("Player")) {
                 EventBusManager.FireEvent<int>(EventBusEnum.EventName.UIHealthUpdate, totalHealth);
@@ -27,6 +30,7 @@ public class Health : MonoBehaviour
 
     private void Die() 
     {
+        PlaySFX(false);
         EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.DeathEffect, gameObject.transform.position);
 
         Debug.Log(gameObject.name + " IS DEAD!");
@@ -49,5 +53,21 @@ public class Health : MonoBehaviour
             }
             
         }
+    }
+
+    private void PlaySFX(bool isDamage)
+    {
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        
+        if(isDamage) 
+        {
+            audioSource.clip = damageSfx;
+        } 
+        else 
+        {
+            audioSource.clip = explosionSfx;
+        }
+
+        audioSource.Play();
     }
 }

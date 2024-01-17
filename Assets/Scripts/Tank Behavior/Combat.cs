@@ -8,6 +8,8 @@ public class Combat : MonoBehaviour
     [SerializeField] Transform turret;
     [SerializeField] float shotDelay = 1f;
 
+    [SerializeField] AudioClip shootSfx;
+
     float lastShotTime = 0;
 
     public void RotateTurret(Vector3 targetPosition)
@@ -25,9 +27,7 @@ public class Combat : MonoBehaviour
     public void Shoot()
     {
         if((Time.time - lastShotTime) >= shotDelay) 
-        {
-            EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.ShootEffect, muzzle.position);
-            
+        {            
             Vector3 spawnPosition = muzzle.position;
             Quaternion spawnRotation = turret.rotation;
 
@@ -37,7 +37,15 @@ public class Combat : MonoBehaviour
             GameObject newBullet = Instantiate(bulletPrefab, spawnPosition, spawnRotation);
             newBullet.GetComponent<Bullet>().LaunchBullet(xDirection, gameObject.tag);
 
+            PlaySFX();
             lastShotTime = Time.time;
         }
+    }
+
+    private void PlaySFX() 
+    {
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = shootSfx;
+        audioSource.Play();
     }
 }
