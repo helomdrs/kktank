@@ -18600,6 +18600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03f7677ab94f96448ab68b7b610d523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionVfx: {fileID: 8757897983772142541, guid: 4892321324d349b44964062f9adaad33, type: 3}
+  hitVfx: {fileID: 6700218797168616514, guid: 8b6fe2f139c15a24abc52e7e6ab61a95, type: 3}
+  shootVfx: {fileID: 1408211414533531435, guid: 706c2fc86f2e9c141aa8ae0c9f9dca91, type: 3}
 --- !u!4 &1144101908
 Transform:
   m_ObjectHideFlags: 0

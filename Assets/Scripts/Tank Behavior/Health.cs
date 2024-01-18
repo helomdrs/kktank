@@ -31,14 +31,14 @@ public class Health : MonoBehaviour
     private void Die() 
     {
         PlaySFX(false);
-        EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.DeathEffect, gameObject.transform.position);
-
+    
         Debug.Log(gameObject.name + " IS DEAD!");
         isAlive = false;
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, .1f);
 
         EventBusManager.FireEvent<string>(EventBusEnum.EventName.TankDead, gameObject.tag);
+        EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.DeathEffect, gameObject.transform.position);
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -51,7 +51,6 @@ public class Health : MonoBehaviour
                 int bulletDamage = bullet.GetBulletDamage();
                 TakeDamage(bulletDamage);
             }
-            
         }
     }
 
