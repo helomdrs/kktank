@@ -38,6 +38,7 @@ public class Combat : MonoBehaviour
             newBullet.GetComponent<Bullet>().LaunchBullet(xDirection, gameObject.tag);
 
             PlaySFX();
+            EventBusManager.FireEvent<Vector3>(EventBusEnum.EventName.ShootEffect, spawnPosition);
             lastShotTime = Time.time;
         }
     }
