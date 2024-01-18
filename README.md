@@ -9,7 +9,6 @@ Index
 - [How to Get](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#how-to-get)
 - [For Kokkuers](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#for-kokkuers)
 - [Assets Used](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#assets-used)
-- [Tools Used](https://github.com/helomdrs/Flappy-Bird/edit/development/README.md#tools-used)
 
 Features
 -
@@ -22,7 +21,7 @@ Requirements
 
 How to Get
 -
-- [Itch.Io](https://louiethedev.itch.io/)
+- [Itch.Io](https://louiethedev.itch.io/kk-tank)
 - Clone this repo to open the projet in Unity
 
 For Kokkuers
@@ -31,12 +30,11 @@ For Kokkuers
 
 Assets Used
 -
+- [Unity Generic EventBus](https://github.com/oviebd/Unity_Generic_EventBus)
 - [Tank Game Pack](https://gisha.itch.io/tank-game-pack)
 - [Kenney Fonts](https://www.kenney.nl/assets/kenney-fonts)
-- [Kenney Crosshair Pack](https://www.kenney.nl/assets/crosshair-pack)
-- [Kenney Particle Pack](https://www.kenney.nl/assets/particle-pack)
 - [Kenney UI Pack (Space Expansion)](https://www.kenney.nl/assets/ui-pack-space-expansion)
-
-Tools Used
--
-- [XML Texture Atlas Slicer](https://assetstore.unity.com/packages/tools/utilities/xml-texture-atlas-slicer-36103)
+- [Steampunk Crossbow Shot SFX](https://freesound.org/people/qubodup/sounds/219455/)
+- [Explosion SFX](https://freesound.org/people/magnuswaker/sounds/523089/)
+- [Military Progress SFX](https://freesound.org/people/blue_steel/sounds/585706/)
+- [Army Game Theme Loop SFX](https://freesound.org/people/Mrthenoronha/sounds/516216/)
